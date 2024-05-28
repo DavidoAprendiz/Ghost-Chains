@@ -2,7 +2,7 @@
 
 Play as a Ghost in the two most prominent haunted chains in the world! :wink:
 
-(ADD "Video" HERE)
+https://github.com/DavidoAprendiz/Ghost-Chains/assets/21132833/b700136c-af13-47a5-99f1-a737fbf3596c
 
 ----------
 A simple and funny shooter game where you play as a Ghost **(ERGO or CARDANO)** and take down CBDCs with our projects!
@@ -76,5 +76,5 @@ Explore more in:
  - [CardanoCube](https://www.cardanocube.com/explore)
  - [SigmaVerse](https://sigmaverse.io/all-projects/?category=All)
 
-(ADD GIF "ALL PROJECTS" HERE)
 
+![GhostChainsProjects](https://github.com/DavidoAprendiz/Ghost-Chains/assets/21132833/05bf5382-62f2-4eb1-8bf9-450228fce019)

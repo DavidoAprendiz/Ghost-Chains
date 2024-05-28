@@ -1,0 +1,156 @@
+[gd_scene load_steps=21 format=3 uid="uid://dqy4l6j215f2e"]
+
+[ext_resource type="Script" path="res://04 - Enemy/enemy.gd" id="1_miv1n"]
+[ext_resource type="Texture2D" uid="uid://hu3de7e75u5a" path="res://04 - Enemy/CBDC.png" id="2_vr61i"]
+[ext_resource type="AudioStream" uid="uid://cs3u2yrcqk6k0" path="res://06 - Configuration/enemy_sound.wav" id="3_le57g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d10aw"]
+radius = 30.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d7pt4"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27i1a"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8uu6"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wee4l"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k30jk"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmh86"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4ga8"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wrnr"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cy2h"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgusb"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1flbk"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6trg"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8sc0"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouen1"]
+atlas = ExtResource("2_vr61i")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l08d4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d7pt4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27i1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8uu6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wee4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k30jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmh86")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4ga8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0wrnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cy2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgusb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1flbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6trg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8sc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ouen1")
+}],
+"loop": false,
+"name": &"death",
+"speed": 33.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jionp"]
+radius = 35.0143
+
+[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+process_mode = 1
+collision_layer = 2
+collision_mask = 7
+motion_mode = 1
+script = ExtResource("1_miv1n")
+
+[node name="EnemyCollision" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 7
+shape = SubResource("CircleShape2D_d10aw")
+
+[node name="EnemySprite" type="AnimatedSprite2D" parent="."]
+light_mask = 2
+visibility_layer = 7
+sprite_frames = SubResource("SpriteFrames_l08d4")
+animation = &"death"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 2
+visibility_layer = 7
+shape = SubResource("CircleShape2D_jionp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0, 7.7486e-07)
+scale = Vector2(1.9, 2)
+
+[node name="EnemySound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_le57g")
+volume_db = -10.0
+pitch_scale = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

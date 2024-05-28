@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cxljjdu0u1gj0"
+path="res://.godot/imported/kushti.wav-9c6b99f28299a5dfa9dbfcd8f2cdf13b.sample"
+
+[deps]
+
+source_file="res://06 - Configuration/kushti.wav"
+dest_files=["res://.godot/imported/kushti.wav-9c6b99f28299a5dfa9dbfcd8f2cdf13b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

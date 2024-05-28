@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm7ou7y02o2bg"]
+
+[ext_resource type="Script" path="res://01 - Main/main.gd" id="1_lbb6r"]
+[ext_resource type="PackedScene" uid="uid://cna0fkkqammr" path="res://02 - Player/player.tscn" id="2_tcjav"]
+[ext_resource type="AudioStream" uid="uid://cshu3xbmvepkf" path="res://06 - Configuration/main_sound.wav" id="4_wp61u"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_lbb6r")
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+light_mask = 7
+visibility_layer = 7
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Health" type="RichTextLabel" parent="."]
+offset_top = 68.0
+offset_right = 412.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Score" type="RichTextLabel" parent="."]
+offset_top = 10.0
+offset_right = 894.0
+offset_bottom = 85.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HighScore" type="RichTextLabel" parent="."]
+offset_left = 1499.0
+offset_top = 10.0
+offset_right = 1911.0
+offset_bottom = 136.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+scroll_active = false
+shortcut_keys_enabled = false
+meta_underlined = false
+hint_underlined = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="EnemyTimer" type="Timer" parent="."]
+
+[node name="DiffTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="PowerUpTimer" type="Timer" parent="."]
+
+[node name="BitcoinTimer" type="Timer" parent="."]
+wait_time = 33.0
+
+[node name="Player" parent="." instance=ExtResource("2_tcjav")]
+position = Vector2(962, 540)
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wp61u")
+volume_db = -17.0
+autoplay = true
+
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="DiffTimer" to="." method="_on_diff_timer_timeout"]
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_power_up_timer_timeout"]
+[connection signal="timeout" from="BitcoinTimer" to="." method="_on_bitcoin_timer_timeout"]

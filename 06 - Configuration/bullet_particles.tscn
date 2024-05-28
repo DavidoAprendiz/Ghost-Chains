@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4gsymj3prc0n"]
+
+[ext_resource type="Script" path="res://06 - Configuration/Bullet_particles.gd" id="1_5uial"]
+
+[sub_resource type="Curve" id="Curve_3g4vt"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_vdune"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.145455, 1)
+colors = PackedColorArray(0.529412, 0, 0, 1, 1, 1, 0, 1)
+
+[node name="BulletParticles" type="Line2D"]
+top_level = true
+points = PackedVector2Array(0, 0)
+width = 20.0
+width_curve = SubResource("Curve_3g4vt")
+gradient = SubResource("Gradient_vdune")
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("1_5uial")

@@ -1,0 +1,161 @@
+[gd_scene load_steps=21 format=3 uid="uid://d3l83xcnval7v"]
+
+[ext_resource type="Script" path="res://05 - PowerUps/bitcoin.gd" id="1_3tsnv"]
+[ext_resource type="Texture2D" uid="uid://p3ydk3m5wuil" path="res://06 - Configuration/bitcoin.png" id="2_tnqtk"]
+[ext_resource type="AudioStream" uid="uid://box3p4rec56wf" path="res://06 - Configuration/bitcoin_sound.wav" id="3_q3rri"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yqtjy"]
+radius = 14.0
+height = 45.3333
+
+[sub_resource type="Gradient" id="Gradient_xauex"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_pwnrc"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyjpx"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gi3ux"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsep5"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q6qn"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jp1r"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qwbq2"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd584"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nm46"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy8ao"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b4j0"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jirjx"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgdj2"]
+atlas = ExtResource("2_tnqtk")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7nicx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyjpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gi3ux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsep5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0q6qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jp1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qwbq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bd584")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nm46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy8ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b4j0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jirjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgdj2")
+}],
+"loop": false,
+"name": &"death",
+"speed": 30.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qr1h6"]
+radius = 17.0
+height = 56.0
+
+[node name="Bitcoin" type="CharacterBody2D" groups=["Bitcoin"]]
+light_mask = 8
+visibility_layer = 5
+scale = Vector2(1.3, 1.3)
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_3tsnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 8
+visibility_layer = 5
+position = Vector2(0, 0.666667)
+shape = SubResource("CapsuleShape2D_yqtjy")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+light_mask = 8
+visibility_layer = 5
+amount = 30
+randomness = 0.25
+lifetime_randomness = 0.25
+local_coords = true
+emission_shape = 2
+emission_sphere_radius = 10.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, -250)
+scale_amount_min = 2.1
+scale_amount_max = 2.1
+color_ramp = SubResource("Gradient_xauex")
+color_initial_ramp = SubResource("Gradient_pwnrc")
+
+[node name="Bitcoin" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7nicx")
+animation = &"death"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 8
+visibility_layer = 5
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_qr1h6")
+
+[node name="BitcoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_q3rri")
+volume_db = 5.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,127 @@
+[gd_scene load_steps=16 format=3 uid="uid://b2wh1cooba1ry"]
+
+[ext_resource type="Script" path="res://05 - PowerUps/powerups.gd" id="1_42c7u"]
+[ext_resource type="Texture2D" uid="uid://datrqibjj5c1c" path="res://05 - PowerUps/Mic.png" id="2_r3wae"]
+[ext_resource type="Texture2D" uid="uid://b0w4d6y61i0yh" path="res://05 - PowerUps/WhiteBoard.png" id="3_nxkhi"]
+[ext_resource type="AudioStream" uid="uid://baxfanjq1h8co" path="res://06 - Configuration/charles.wav" id="4_rsucd"]
+[ext_resource type="AudioStream" uid="uid://cxljjdu0u1gj0" path="res://06 - Configuration/kushti.wav" id="5_q5jlm"]
+
+[sub_resource type="Gradient" id="Gradient_tv2kx"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_x5wjk"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqh4k"]
+radius = 15.0
+height = 45.3333
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ftdto"]
+atlas = ExtResource("2_r3wae")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k7ct"]
+atlas = ExtResource("2_r3wae")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cx708"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ftdto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k7ct")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eu44o"]
+atlas = ExtResource("3_nxkhi")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwmjo"]
+atlas = ExtResource("3_nxkhi")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2hul5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eu44o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwmjo")
+}],
+"loop": false,
+"name": &"death",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2chqx"]
+radius = 18.3333
+height = 56.0
+
+[node name="PowerUps" type="CharacterBody2D" groups=["Powerup"]]
+scale = Vector2(1.2, 1.2)
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_42c7u")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 20
+randomness = 0.25
+lifetime_randomness = 0.25
+local_coords = true
+emission_shape = 2
+emission_sphere_radius = 15.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, -100)
+scale_amount_min = 2.1
+scale_amount_max = 2.1
+color_ramp = SubResource("Gradient_tv2kx")
+color_initial_ramp = SubResource("Gradient_x5wjk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 8
+visibility_layer = 5
+position = Vector2(0, 0.666667)
+shape = SubResource("CapsuleShape2D_iqh4k")
+
+[node name="Mic" type="AnimatedSprite2D" parent="."]
+visible = false
+light_mask = 8
+visibility_layer = 5
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_cx708")
+animation = &"death"
+
+[node name="Whiteboard" type="AnimatedSprite2D" parent="."]
+visible = false
+light_mask = 8
+visibility_layer = 5
+scale = Vector2(1.3, 1.3)
+sprite_frames = SubResource("SpriteFrames_2hul5")
+animation = &"death"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 8
+visibility_layer = 5
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_2chqx")
+
+[node name="Kushti" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_q5jlm")
+volume_db = -5.0
+
+[node name="Charles" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rsucd")
+volume_db = -5.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

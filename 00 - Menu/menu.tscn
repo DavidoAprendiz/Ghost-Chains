@@ -1,0 +1,238 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfubq2vjqmnnc"]
+
+[ext_resource type="Script" path="res://00 - Menu/menu.gd" id="1_rc2kl"]
+[ext_resource type="Texture2D" uid="uid://blnq0mmmb8l3y" path="res://06 - Configuration/settings_icon.png" id="3_g2ycy"]
+[ext_resource type="Theme" uid="uid://beeho6jerr2ql" path="res://06 - Configuration/menu.tres" id="4_jalsi"]
+[ext_resource type="AudioStream" uid="uid://bqlf3ef5kwg3b" path="res://06 - Configuration/menu_sound.wav" id="4_jpnhp"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -3.0
+offset_right = -105.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_rc2kl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 105.0
+offset_right = 2025.0
+offset_bottom = 1082.0
+
+[node name="Title" type="RichTextLabel" parent="TextureRect"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+offset_left = -3.0
+offset_top = 111.0
+offset_right = 1918.0
+offset_bottom = 1083.0
+bbcode_enabled = true
+text = "[pulse freq=1.0 ease=-2.0][center][color=ff5e00] [wave amp=50.0 freq=5.0 connected=1][font_size={76}] [fade start=2 length=17]Ghost Chains..."
+autowrap_mode = 0
+
+[node name="SubTitle" type="RichTextLabel" parent="TextureRect"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+offset_left = 2.0
+offset_top = 859.0
+offset_right = 1922.0
+offset_bottom = 1083.0
+bbcode_enabled = true
+text = "[pulse freq=1.0 ease=-2.0][center][color=ff5e00] [shake rate=20.0 level=5 connected=1][font_size={43}] Say NO to CBDC's!"
+autowrap_mode = 0
+
+[node name="Cardano" type="LinkButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1332.0
+offset_top = 755.0
+offset_right = 1521.0
+offset_bottom = 796.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "https://cardano.org"
+uri = "https://cardano.org"
+
+[node name="Ergo" type="LinkButton" parent="TextureRect"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 755.0
+offset_right = 602.0
+offset_bottom = 801.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "https://ergoplatform.org"
+uri = "https://ergoplatform.org/en/"
+
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1841.0
+offset_top = 75.0
+offset_right = 1881.0
+offset_bottom = 115.0
+scale = Vector2(1.4, 1.4)
+icon = ExtResource("3_g2ycy")
+
+[node name="SettingsFiled" type="TextureRect" parent="Settings"]
+layout_mode = 0
+offset_left = -129.0
+offset_bottom = 220.0
+
+[node name="SettingsLabel" type="RichTextLabel" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 120.0
+offset_bottom = 40.0
+bbcode_enabled = true
+text = "[center][color=ff5e00] [shake rate=2.0 level=5 connected=1][font_size={18}] SETTINGS"
+
+[node name="NightMode" type="CheckButton" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_left = 42.4286
+offset_top = 56.7143
+offset_right = 128.429
+offset_bottom = 96.7143
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+
+[node name="SoundButton" type="CheckButton" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_left = 42.4286
+offset_top = 86.7143
+offset_right = 128.429
+offset_bottom = 126.714
+scale = Vector2(0.75, 0.75)
+button_pressed = true
+
+[node name="MusicButton" type="CheckButton" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_left = 42.4286
+offset_top = 116.714
+offset_right = 128.429
+offset_bottom = 156.714
+scale = Vector2(0.75, 0.75)
+button_pressed = true
+
+[node name="Github" type="Button" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_left = 6.00098
+offset_top = 162.428
+offset_right = 273.001
+offset_bottom = 374.428
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("4_jalsi")
+
+[node name="X" type="Button" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_left = 46.1416
+offset_top = 162.143
+offset_right = 313.142
+offset_bottom = 376.143
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("4_jalsi")
+
+[node name="ItchIo" type="Button" parent="Settings/SettingsFiled"]
+layout_mode = 0
+offset_left = 84.7158
+offset_top = 162.143
+offset_right = 348.716
+offset_bottom = 369.143
+scale = Vector2(0.1, 0.1)
+theme = ExtResource("4_jalsi")
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="AdaGhost" type="Button" parent="Buttons"]
+offset_left = 808.0
+offset_top = 408.0
+offset_right = 1112.0
+offset_bottom = 483.0
+theme = ExtResource("4_jalsi")
+theme_override_font_sizes/font_size = 20
+
+[node name="ErgGhost" type="Button" parent="Buttons"]
+offset_left = 808.0
+offset_top = 512.0
+offset_right = 1112.0
+offset_bottom = 587.0
+theme = ExtResource("4_jalsi")
+theme_override_font_sizes/font_size = 20
+
+[node name="GiveUp" type="Button" parent="Buttons"]
+offset_left = 856.0
+offset_top = 715.0
+offset_right = 1064.0
+offset_bottom = 764.0
+theme = ExtResource("4_jalsi")
+theme_override_font_sizes/font_size = 20
+text = "EXIT"
+
+[node name="GiveUpFinal" type="Button" parent="Buttons"]
+visible = false
+offset_left = 808.0
+offset_top = 773.0
+offset_right = 1112.0
+offset_bottom = 849.0
+theme = ExtResource("4_jalsi")
+theme_override_font_sizes/font_size = 20
+
+[node name="UpdatePrice" type="Button" parent="Buttons"]
+offset_left = 890.0
+offset_top = 615.0
+offset_right = 1030.0
+offset_bottom = 658.0
+theme = ExtResource("4_jalsi")
+text = "UPDATE PRICES"
+
+[node name="MenuSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jpnhp")
+volume_db = -15.0
+pitch_scale = 2.5
+
+[node name="ErgPrice" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 796.0
+offset_right = 707.0
+offset_bottom = 875.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+
+[node name="Erg" type="HTTPRequest" parent="ErgPrice"]
+
+[node name="AdaPrice" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1437.0
+offset_top = 796.0
+offset_right = 1626.0
+offset_bottom = 875.0
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+
+[node name="Ada" type="HTTPRequest" parent="AdaPrice"]
+
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Settings/SettingsFiled/NightMode" to="." method="_on_night_mode_pressed"]
+[connection signal="pressed" from="Settings/SettingsFiled/SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="Settings/SettingsFiled/MusicButton" to="." method="_on_music_button_pressed"]
+[connection signal="pressed" from="Settings/SettingsFiled/Github" to="." method="_on_github_pressed"]
+[connection signal="pressed" from="Settings/SettingsFiled/X" to="." method="_on_x_pressed"]
+[connection signal="pressed" from="Settings/SettingsFiled/ItchIo" to="." method="_on_itch_io_pressed"]
+[connection signal="mouse_entered" from="Buttons/AdaGhost" to="." method="_on_ada_ghost_mouse_entered"]
+[connection signal="pressed" from="Buttons/AdaGhost" to="." method="_on_ada_ghost_pressed"]
+[connection signal="mouse_entered" from="Buttons/ErgGhost" to="." method="_on_erg_ghost_mouse_entered"]
+[connection signal="pressed" from="Buttons/ErgGhost" to="." method="_on_erg_ghost_pressed"]
+[connection signal="mouse_entered" from="Buttons/GiveUp" to="." method="_on_give_up_mouse_entered"]
+[connection signal="pressed" from="Buttons/GiveUp" to="." method="_on_give_up_pressed"]
+[connection signal="mouse_entered" from="Buttons/GiveUpFinal" to="." method="_on_give_up_2_mouse_entered"]
+[connection signal="pressed" from="Buttons/GiveUpFinal" to="." method="_on_give_up_2_pressed"]
+[connection signal="pressed" from="Buttons/UpdatePrice" to="." method="_on_update_price_pressed"]
+[connection signal="request_completed" from="ErgPrice/Erg" to="." method="_on_erg_request_completed"]
+[connection signal="request_completed" from="AdaPrice/Ada" to="." method="_on_ada_request_completed"]

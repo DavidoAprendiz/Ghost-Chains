@@ -1,0 +1,407 @@
+[gd_scene load_steps=56 format=3 uid="uid://olnwde83oh0r"]
+
+[ext_resource type="Script" path="res://03 - Bullet/bullet.gd" id="1_fqesg"]
+[ext_resource type="Texture2D" uid="uid://d4gprk62a6e87" path="res://03 - Bullet/ada/hosky.png" id="2_5qhf0"]
+[ext_resource type="Texture2D" uid="uid://eitll11guwbq" path="res://03 - Bullet/ada/snek.png" id="3_85r1c"]
+[ext_resource type="Texture2D" uid="uid://bx6p50olbt362" path="res://03 - Bullet/ada/adahandle.png" id="4_swbca"]
+[ext_resource type="Texture2D" uid="uid://keehog6wuhdc" path="res://03 - Bullet/ada/adagoats.png" id="4_ytib5"]
+[ext_resource type="Texture2D" uid="uid://cxx6a8m6yvqps" path="res://03 - Bullet/ada/aiken.png" id="6_r26kg"]
+[ext_resource type="Texture2D" uid="uid://ccjvi3cwxd1vi" path="res://03 - Bullet/ada/bookio.png" id="7_34tcq"]
+[ext_resource type="Texture2D" uid="uid://ct8jk4ig7u08m" path="res://03 - Bullet/ada/charli3.png" id="8_hegfe"]
+[ext_resource type="Texture2D" uid="uid://ilwoxtkuw3wo" path="res://03 - Bullet/ada/dcspark.png" id="9_wmyed"]
+[ext_resource type="Texture2D" uid="uid://cbrixi1ok4hg7" path="res://03 - Bullet/ada/dripdropz.png" id="10_ee7r3"]
+[ext_resource type="Texture2D" uid="uid://bmy0fgdfdm6wi" path="res://03 - Bullet/ada/empowa.png" id="11_1i7ts"]
+[ext_resource type="Texture2D" uid="uid://rfm554lred41" path="res://03 - Bullet/ada/eternlwallet.png" id="12_3psda"]
+[ext_resource type="Texture2D" uid="uid://pkim3y0a6qyn" path="res://03 - Bullet/ada/fluid.png" id="13_dh7os"]
+[ext_resource type="Texture2D" uid="uid://cpfy7xcie87aj" path="res://03 - Bullet/ada/geniusyield.png" id="14_lchye"]
+[ext_resource type="Texture2D" uid="uid://bhbkfs4nyxeyg" path="res://03 - Bullet/ada/gerowallet.png" id="15_sxocg"]
+[ext_resource type="Texture2D" uid="uid://bcpf1velhjt8t" path="res://03 - Bullet/ada/indigo.png" id="16_6od63"]
+[ext_resource type="Texture2D" uid="uid://cm56q45a53m6o" path="res://03 - Bullet/ada/lenfi.png" id="17_pbsxc"]
+[ext_resource type="Texture2D" uid="uid://2w38ylank26a" path="res://03 - Bullet/ada/midnight.png" id="18_ibsci"]
+[ext_resource type="Texture2D" uid="uid://mxalivd4ksse" path="res://03 - Bullet/ada/minswap.png" id="19_uumol"]
+[ext_resource type="Texture2D" uid="uid://dd3qoegyfjejv" path="res://03 - Bullet/ada/newm.png" id="20_u4nuk"]
+[ext_resource type="Texture2D" uid="uid://cbl7qlbl52tx1" path="res://03 - Bullet/ada/nunet.png" id="21_qusuo"]
+[ext_resource type="Texture2D" uid="uid://de4nexs05mr2q" path="res://03 - Bullet/ada/singularitynet.png" id="22_c2kgc"]
+[ext_resource type="Texture2D" uid="uid://blggtixs38ix5" path="res://03 - Bullet/ada/smartplaces.png" id="23_c6ho2"]
+[ext_resource type="Texture2D" uid="uid://c04d7pcad3eef" path="res://03 - Bullet/ada/smaugpool.png" id="24_on0js"]
+[ext_resource type="Texture2D" uid="uid://c4sgbjrnrihpr" path="res://03 - Bullet/ada/sundaeswap.png" id="25_yyp3k"]
+[ext_resource type="Texture2D" uid="uid://dec7141jtjvcw" path="res://03 - Bullet/ada/veritree.png" id="26_201gc"]
+[ext_resource type="Texture2D" uid="uid://ybd4ak6awepr" path="res://03 - Bullet/ada/vyfi.png" id="27_2e0gd"]
+[ext_resource type="Texture2D" uid="uid://c7ff2ayb4uok" path="res://03 - Bullet/ada/wingriders.png" id="28_lrgry"]
+[ext_resource type="Texture2D" uid="uid://dp3imkf8lpi76" path="res://03 - Bullet/ada/worldmobile.png" id="29_fextl"]
+[ext_resource type="Texture2D" uid="uid://4mvbmm0qh55h" path="res://03 - Bullet/ada/yoroiwallet.png" id="30_lkmhw"]
+[ext_resource type="Texture2D" uid="uid://chrox7md4h0d8" path="res://03 - Bullet/erg/comet.png" id="31_m824g"]
+[ext_resource type="Texture2D" uid="uid://670206qkuaw1" path="res://03 - Bullet/erg/bober.png" id="32_pgwqf"]
+[ext_resource type="Texture2D" uid="uid://b4rnedp88c06h" path="res://03 - Bullet/erg/cruxfinance.png" id="33_dd20a"]
+[ext_resource type="Texture2D" uid="uid://c2gv35t4dstef" path="res://03 - Bullet/erg/cyberverse.png" id="34_ljqys"]
+[ext_resource type="Texture2D" uid="uid://cgsvs7gnx42ti" path="res://03 - Bullet/erg/duckpool.png" id="35_eohiy"]
+[ext_resource type="Texture2D" uid="uid://d2lpxlb5vx064" path="res://03 - Bullet/erg/ergoauction.png" id="36_x1xnd"]
+[ext_resource type="Texture2D" uid="uid://xuxb4nnc0eh7" path="res://03 - Bullet/erg/ergomixer.png" id="37_subka"]
+[ext_resource type="Texture2D" uid="uid://by6gfwh2h2blq" path="res://03 - Bullet/erg/ergonames.png" id="38_6b7jj"]
+[ext_resource type="Texture2D" uid="uid://djpdis11b6tb7" path="res://03 - Bullet/erg/ergopad.png" id="39_85j5c"]
+[ext_resource type="Texture2D" uid="uid://c664qo32i4jx7" path="res://03 - Bullet/erg/ergoraffle.png" id="40_6gu8n"]
+[ext_resource type="Texture2D" uid="uid://cnk1052i2ragt" path="res://03 - Bullet/erg/exle.png" id="41_d3shb"]
+[ext_resource type="Texture2D" uid="uid://b7365q644ilai" path="res://03 - Bullet/erg/lilium.png" id="42_jf4nm"]
+[ext_resource type="Texture2D" uid="uid://btvqxxqae46sh" path="res://03 - Bullet/erg/lithos.png" id="43_7mxvs"]
+[ext_resource type="Texture2D" uid="uid://pxmbwuajhjts" path="res://03 - Bullet/erg/nautiluswallet.png" id="44_0mjt4"]
+[ext_resource type="Texture2D" uid="uid://bc4o6i1pf6tvy" path="res://03 - Bullet/erg/paideia.png" id="45_aq1vp"]
+[ext_resource type="Texture2D" uid="uid://ve37dcrt516q" path="res://03 - Bullet/erg/rosenbridge.png" id="46_qal5r"]
+[ext_resource type="Texture2D" uid="uid://crsfk8rnuqp6x" path="res://03 - Bullet/erg/satergo.png" id="47_5k0nx"]
+[ext_resource type="Texture2D" uid="uid://si0qic4tnwyb" path="res://03 - Bullet/erg/sigmafi.png" id="48_u5jnu"]
+[ext_resource type="Texture2D" uid="uid://b1m2rv0gpejam" path="res://03 - Bullet/erg/skyharbor.png" id="49_4eo60"]
+[ext_resource type="Texture2D" uid="uid://88tl2fg2r40q" path="res://03 - Bullet/erg/spectrum.png" id="50_kp670"]
+[ext_resource type="Texture2D" uid="uid://b3xspm3fwqlum" path="res://03 - Bullet/erg/tokenjay.png" id="51_27mm4"]
+[ext_resource type="Texture2D" uid="uid://dndyrrvs6p47l" path="res://03 - Bullet/erg/zengate.png" id="52_k61gs"]
+[ext_resource type="PackedScene" uid="uid://c4gsymj3prc0n" path="res://06 - Configuration/bullet_particles.tscn" id="53_wyued"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l1ssk"]
+radius = 208.0
+height = 418.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_78vmn"]
+radius = 189.011
+
+[node name="Bullet" type="CharacterBody2D" groups=["Bullet"]]
+process_mode = 1
+z_index = 1
+collision_layer = 4
+collision_mask = 14
+motion_mode = 1
+script = ExtResource("1_fqesg")
+
+[node name="BulletCollision" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 14
+shape = SubResource("CapsuleShape2D_l1ssk")
+
+[node name="Ada" type="Node2D" parent="."]
+light_mask = 4
+visibility_layer = 14
+
+[node name="Hosky" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("2_5qhf0")
+
+[node name="Snek" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("3_85r1c")
+
+[node name="AdaGoats" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("4_ytib5")
+
+[node name="AdaHandle" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("4_swbca")
+
+[node name="Aiken" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("6_r26kg")
+
+[node name="BookIo" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("7_34tcq")
+
+[node name="Charli3" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("8_hegfe")
+
+[node name="DcSpark" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("9_wmyed")
+
+[node name="DripDropz" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("10_ee7r3")
+
+[node name="Empowa" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("11_1i7ts")
+
+[node name="Eternl" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("12_3psda")
+
+[node name="Fluid" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("13_dh7os")
+
+[node name="GeniusYield" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("14_lchye")
+
+[node name="GeroWallet" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("15_sxocg")
+
+[node name="Indigo" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("16_6od63")
+
+[node name="Lenfi" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("17_pbsxc")
+
+[node name="Midnight" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("18_ibsci")
+
+[node name="MinSwap" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("19_uumol")
+
+[node name="NewM" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("20_u4nuk")
+
+[node name="NuNet" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("21_qusuo")
+
+[node name="SingularityNet" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("22_c2kgc")
+
+[node name="SmartPlaces" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("23_c6ho2")
+
+[node name="SmaugPool" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("24_on0js")
+
+[node name="SundaeSwap" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("25_yyp3k")
+
+[node name="VeriTree" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("26_201gc")
+
+[node name="VyFi" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("27_2e0gd")
+
+[node name="WingRiders" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("28_lrgry")
+
+[node name="WorldMobile" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("29_fextl")
+
+[node name="YoroiWallet" type="Sprite2D" parent="Ada"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("30_lkmhw")
+
+[node name="Erg" type="Node2D" parent="."]
+light_mask = 4
+visibility_layer = 14
+
+[node name="Comet" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("31_m824g")
+
+[node name="Bober" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("32_pgwqf")
+
+[node name="CruxFinance" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("33_dd20a")
+
+[node name="CyberVerse" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("34_ljqys")
+
+[node name="DuckPool" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("35_eohiy")
+
+[node name="ErgoAuction" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("36_x1xnd")
+
+[node name="ErgoMixer" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("37_subka")
+
+[node name="ErgoNames" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("38_6b7jj")
+
+[node name="ErgoPad" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("39_85j5c")
+
+[node name="ErgoRaffle" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("40_6gu8n")
+
+[node name="Exle" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("41_d3shb")
+
+[node name="Lilium" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("42_jf4nm")
+
+[node name="Lithos" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("43_7mxvs")
+
+[node name="NautilusWallet" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("44_0mjt4")
+
+[node name="Paideia" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("45_aq1vp")
+
+[node name="RosenBridge" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("46_qal5r")
+
+[node name="Satergo" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("47_5k0nx")
+
+[node name="SigmaFi" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("48_u5jnu")
+
+[node name="SkyHarbor" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("49_4eo60")
+
+[node name="Spectrum" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("50_kp670")
+
+[node name="TokenJay" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("51_27mm4")
+
+[node name="ZenGate" type="Sprite2D" parent="Erg"]
+visible = false
+light_mask = 4
+visibility_layer = 14
+texture = ExtResource("52_k61gs")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+light_mask = 4
+visibility_layer = 14
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 14
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+light_mask = 4
+visibility_layer = 14
+shape = SubResource("CircleShape2D_78vmn")
+
+[node name="BulletParticles" parent="." instance=ExtResource("53_wyued")]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

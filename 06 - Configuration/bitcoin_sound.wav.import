@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://box3p4rec56wf"
+path="res://.godot/imported/bitcoin_sound.wav-aeb81db2126894203a8aa027cd7f83d8.sample"
+
+[deps]
+
+source_file="res://06 - Configuration/bitcoin_sound.wav"
+dest_files=["res://.godot/imported/bitcoin_sound.wav-aeb81db2126894203a8aa027cd7f83d8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

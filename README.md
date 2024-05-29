@@ -5,7 +5,7 @@ Play as a Ghost in the two most prominent haunted chains in the world! :wink:
 https://github.com/DavidoAprendiz/Ghost-Chains/assets/21132833/b700136c-af13-47a5-99f1-a737fbf3596c
 
 ----------
-A simple and funny shooter game where you play as a Ghost **(ERGO or CARDANO)** and take down CBDCs with our projects!
+A simple and funny shooter game where you play as a Ghost and take down CBDCs with many projects from Ergo and Cardano!
 
 Can you survive a full **Bitcoin Cycle**? How many CBDCs did you **infected**?
 

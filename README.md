@@ -54,7 +54,7 @@ There's **no time-limit** amd you have **3 lives** so you need to catch all the 
 
 - **Windows**
  	- Go to [Releases](https://github.com/DavidoAprendiz/ghost_chains/releases) and download the **"Windows"** version.
- 		- Open GhostChains.exe (x86 or x64)
+ 		- Open GhostChains.exe (x32 or x64)
 
 ----------
 ### License:

@@ -3,10 +3,10 @@ extends CharacterBody2D
 # Scenes
 const BULLET : PackedScene = preload("res://03 - Bullet/bullet.tscn")
 # Labels from Main
-@onready var health_label_path = get_node("../Health")
+@onready var health_label_path : Node = get_node("../Health")
 @onready var score_label_path : Node = get_node("../Score")
 @onready var high_score_label_path : Node = get_node("../HighScore")
-@onready var main_camera = get_node("../Camera")
+@onready var main_camera : Node = get_node("../Camera")
 # Player configuration
 var bullet_type : String
 var can_shoot : bool = false
@@ -19,12 +19,12 @@ var speed : float = 4.20
 var is_sound_on : bool
 
 # Controls player movement
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
 	var vel : Vector2 = Vector2(get_global_mouse_position() - global_position)
 	velocity = vel * speed
 	move_and_slide()
 
-func _process(_delta):
+func _process(_delta) -> void:
 	# Exit the game (during the game or in the Menu)
 	if Input.is_action_just_pressed("sair"):
 		if bullet_type:
@@ -44,20 +44,20 @@ func _process(_delta):
 		to_shoot()
 
 # Create instances of bullets according to the user's choice and fires/shoots
-func to_shoot():
+func to_shoot() -> void:
 	var bullet : CharacterBody2D = BULLET.instantiate()
 	bullet.bullet_type = bullet_type
 	match bullet_type:
 		"Erg":
-			var erg_sprite : Array = bullet.get_erg_sprites()
-			var project = bullet.get_node(bullet_type + "/"  + str(erg_sprite[counter]))
+			var erg_sprite : Array[Node] = bullet.get_erg_sprites()
+			var project : Node = bullet.get_node(bullet_type + "/"  + str(erg_sprite[counter]))
 			project.visible = true
 			if (counter >= erg_sprite.size()-1):
 				counter = 0
 			else:
 				counter += 1
 		"Ada":
-			var ada_sprite : Array = bullet.get_ada_sprites()
+			var ada_sprite : Array[Node] = bullet.get_ada_sprites()
 			var project : Node = bullet.get_node(bullet_type + "/"  + str(ada_sprite[counter]))
 			project.visible = true
 			if (counter >= ada_sprite.size()-1):
@@ -69,7 +69,7 @@ func to_shoot():
 	get_parent().add_child(bullet)
 
 # Update health
-func update_health(gain_health):
+func update_health(gain_health) -> void:
 	if health >= 1:
 		if gain_health:
 			health += 1
@@ -82,20 +82,20 @@ func update_health(gain_health):
 	update_labels(health,score,high_score)
 
 # Update score and high score
-func update_score():
+func update_score() -> void:
 	score += 1
 	if score > high_score:
 		high_score = score
 	update_labels(health,score,high_score)
 
 # Update Health/Score/High Score labels
-func update_labels(healths, scores, highscores):
+func update_labels(healths, scores, highscores) -> void:
 	health_label_path.text = " " + str(healths) +  " Hearth/s"
 	score_label_path.text = " Bitcoin Cycle/s: " + str("%.6f" % [scores/(365*4+1.0)]) + "\n CBDC's infected: " + str(scores) + " "
 	high_score_label_path.text = "[right]" + "HIGH SCORE \n(1 cycle = 4 years) \n" + str(high_score) + " infected \n" + str("%.6f" % [highscores/(365*4+1.0)]) + " Bitcoin cycle(s)"
 
 # Confirm the player's death :)
-func confirm_death():
+func confirm_death() -> void:
 	get_parent().get_node("EnemyTimer").stop()
 	get_parent().get_node("PowerUpTimer").stop()
 	can_shoot = false
@@ -110,7 +110,7 @@ func confirm_death():
 	await get_node(bullet_type).animation_finished
 
 # Reset player settings and timers
-func player_retry():
+func player_retry() -> void:
 	main_camera.zoom = Vector2(1,1)
 	$Final.visible = false
 	can_shoot = true
@@ -125,7 +125,7 @@ func player_retry():
 	get_parent().choice(bullet_type)
 
 # Check enemy contact and update health, stop update after life <= 0
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("Enemy"):
 		update_health(false)
 		if health > 0:
@@ -135,32 +135,32 @@ func _on_area_2d_body_entered(body):
 			get_node(bullet_type).frame = 0
 
 # Open the Menu ( _ready() will load initial values ) (button)
-func _on_menu_pressed():
+func _on_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://01 - Main/main.tscn")
 
 # Close the game (button)
-func _on_exit_pressed():
+func _on_exit_pressed() -> void:
 	if OS.has_feature("32") or OS.has_feature("64"):
 		get_tree().quit()
 	else:
 		$Final/Exit.disabled = true
 
 # Starts again with the same settings chosen by the user (button)
-func _on_retry_pressed():
+func _on_retry_pressed() -> void:
 	player_retry()
 
 # Sounds
-func play_menu_sound():
+func play_menu_sound() -> void:
 	if is_sound_on:
 		$MenuSound.play()
-func _on_menu_mouse_entered():
+func _on_menu_mouse_entered() -> void:
 	play_menu_sound()
-func _on_exit_mouse_entered():
+func _on_exit_mouse_entered() -> void:
 	play_menu_sound()
-func _on_retry_mouse_entered():
+func _on_retry_mouse_entered() -> void:
 	play_menu_sound()
 
 # Spin player (button)
-func _on_animation_pressed():
+func _on_animation_pressed() -> void:
 	get_node(bullet_type).play("death")
 	await get_node(bullet_type).animation_finished

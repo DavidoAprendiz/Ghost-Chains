@@ -4,7 +4,7 @@ extends CharacterBody2D
 var founder : int = randi_range(0,1)
 
 # Start the powerups randomly
-func call_powerup():
+func call_powerup() -> void:
 	if !founder:
 		get_node("Mic").visible = true
 		get_node("Whiteboard").visible = false
@@ -14,7 +14,7 @@ func call_powerup():
 	set_position(Vector2(randf_range(80, 1840), randf_range(80, 1000)))
 
 # Clean objects, play founder sounds and update health
-func _on_area_2d_body_entered(body):
+func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("Player") or body.is_in_group("Bullet"):
 		match founder:
 			0: $Kushti.play()

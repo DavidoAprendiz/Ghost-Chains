@@ -4,7 +4,7 @@ var fila : Array
 var FILA_MAX : float = 420.0 / 10.0
 
 
-func _process(_delta):
+func _process(_delta) -> void:
 	# Trail Line
 	fila.push_front(get_parent().position)
 	if fila.size() > FILA_MAX:

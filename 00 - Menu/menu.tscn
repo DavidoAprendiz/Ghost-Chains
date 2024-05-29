@@ -233,6 +233,7 @@ bbcode_enabled = true
 [connection signal="pressed" from="Buttons/GiveUp" to="." method="_on_give_up_pressed"]
 [connection signal="mouse_entered" from="Buttons/GiveUpFinal" to="." method="_on_give_up_2_mouse_entered"]
 [connection signal="pressed" from="Buttons/GiveUpFinal" to="." method="_on_give_up_2_pressed"]
+[connection signal="mouse_entered" from="Buttons/UpdatePrice" to="." method="_on_update_price_mouse_entered"]
 [connection signal="pressed" from="Buttons/UpdatePrice" to="." method="_on_update_price_pressed"]
 [connection signal="request_completed" from="ErgPrice/Erg" to="." method="_on_erg_request_completed"]
 [connection signal="request_completed" from="AdaPrice/Ada" to="." method="_on_ada_request_completed"]

@@ -41,7 +41,11 @@ There's **no time-limit** amd you have **3 lives** so you need to catch all the 
 	- A **Whiteboard** and a **Microphone**! - TWO unforgettable items from the founders! Each time you hit them, you'll get one life. :laughing:
 
 ----------
-### Usage:
+### How to:
+
+- **Browser**
+	- You can now play directly on your browser!
+		- https://davidoaprendiz.itch.io/ghost-chains
 
 - **Godot** 
 	- To edit/change/add you can copy the entire repository and import it to [Godot](https://godotengine.org).

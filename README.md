@@ -47,13 +47,13 @@ There's **no time-limit** amd you have **3 lives** so you need to catch all the 
 	- To edit/change/add you can copy the entire repository and import it to [Godot](https://godotengine.org).
 
 - **Web Server**
-	- Go to [Releases](https://github.com/DavidoAprendiz/ghost_chains/releases) and download the **"Web"** version.
+	- Go to [Releases](https://github.com/DavidoAprendiz/ghost-chains/releases) and download the **"Web"** version.
 		- Run in your web server and let everyone play!
 		- Run in your local server!
 			- You can run: `python LOCAL_SERVER.py` and go to `http://localhost:9033/GhostChains.html`
 
 - **Windows**
- 	- Go to [Releases](https://github.com/DavidoAprendiz/ghost_chains/releases) and download the **"Windows"** version.
+ 	- Go to [Releases](https://github.com/DavidoAprendiz/ghost-chains/releases) and download the **"Windows"** version.
  		- Open GhostChains.exe (x32 or x64)
 
 ----------

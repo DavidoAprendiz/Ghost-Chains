@@ -15,7 +15,7 @@ config/name_localized={
 "pt": "Blockchains Fantasma"
 }
 config/description="A simple and funny shooter game where you play as a Ghost and take down CBDCs with many projects from Ergo and Cardano!"
-config/version="1.0.0"
+config/version="1.0.0.1"
 config/tags=PackedStringArray("space_shooter")
 run/main_scene="res://01 - Main/main.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
